@@ -1,0 +1,39 @@
+﻿@model List<Student>
+
+
+
+<h2>Index</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].StudyName)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudyName)
+                </td>
+       
+            </tr>
+        }
+    </tbody>
+</table>
