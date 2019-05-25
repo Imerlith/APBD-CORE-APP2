@@ -3,8 +3,9 @@
 
 
 <h2 class="center-align">List Studentów</h2>
+<a asp-action="Create">Dodaj Studenta</a>
 <table class="highlight">
-    <thead>
+    <thead class=" blue-grey lighten-2">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model[0].FirstName)
@@ -15,7 +16,7 @@
             <th>
                 @Html.DisplayNameFor(model => model[0].StudyName)
             </th>
-            
+
             <th></th>
         </tr>
     </thead>
@@ -32,7 +33,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.StudyName)
                 </td>
-       
+                <td>
+                    <a asp-action="Delete">Delete</a>
+                </td>
             </tr>
         }
     </tbody>

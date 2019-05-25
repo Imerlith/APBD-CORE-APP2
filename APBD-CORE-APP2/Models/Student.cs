@@ -8,6 +8,7 @@ namespace APBD_CORE_APP2.Models
 {
     public class Student
     {
+       
         [Display(Name ="Imię")]
         public string FirstName { get; set; }
         [Display(Name = "Nazwisko")]

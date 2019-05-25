@@ -20,10 +20,17 @@ namespace APBD_CORE_APP2.Controllers
                 new Student { FirstName = "Przemek", LastName="Gołębski",StudyName="Informatyka"},
                 new Student { FirstName = "Adam", LastName="Nowak",StudyName="Sztuka nowych mediów"}
             };
+            students.OrderBy(s => s.LastName);
             return View(students);
         }
-        public IActionResult Create()
+        public IActionResult Create(Student student)
         {
+
+            return View();
+        }
+        public IActionResult Delete(Student student)
+        {
+
             return View();
         }
     }
