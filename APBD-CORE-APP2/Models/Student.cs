@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
 namespace APBD_CORE_APP2.Models
 {
-    public class Student
+    public partial class Student
     {
-       
-        [Display(Name ="Imię")]
+        public int IdStudent { get; set; }
+        [Display(Name ="Imie")]
+        [Required(ErrorMessage ="Imie wymagane")]
         public string FirstName { get; set; }
         [Display(Name = "Nazwisko")]
+        [Required(ErrorMessage = "Nazwisko wymagane")]
         public string LastName { get; set; }
-        [Display(Name = "Kierunek")]
-        public string StudyName { get; set; }
+        public string Address { get; set; }
+        public string IndexNumber { get; set; }
+        public int IdStudies { get; set; }
+        public Studies Studies { get; set; }
     }
 }
