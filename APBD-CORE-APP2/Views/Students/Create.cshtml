@@ -1,17 +1,32 @@
 ﻿@model Student
-<h2>Wypełnij pola aby utworzyć nowego studenta</h2>
+<h2 class="text-center">Wypełnij pola aby utworzyć nowego studenta</h2>
+<div class="input-field">
+    <div class="row ">
+        <form class="col s12">
+            <div class="input-field col s12">
+                <input asp-for="FirstName" />
+                <label for="FirstName">Imie</label>
+            </div>
+            <div class="input-field col s12">
+                <input asp-for="LastName"/>
+                <label for="LastName">Nazwisko</label>
+            </div>
+           
+            <select name="studies" class="browser-default">
+                <option value="" disabled selected>Wybierz kierunek</option>
+                <option value="Informatyka">Informatyka</option>
+                <option value="Sztuka nowych mediów">Sztuka nowych mediów</option>
+                <option value="Zarządanie">Zarządanie</option>
+            </select>
+            <button class="btn waves-effect waves-light" type="submit" name="action">
+                Dodaj
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+       
+    
+</div>
 
-<form asp-action="Create" >
-    <label>Imię</label> <input type="text" asp-for="FirstName" />
-    <label>Nazwisko</label> <input type="text" asp-for="LastName" />
-    <label>Kierunek</label> 
-    <select name="studies" class="browser-default">
-        <option value="" disabled selected>Wybierz kierunek</option>
-        <option value="Informatyka">Informatyka</option>
-        <option value="Sztuka nowych mediów">Sztuka nowych mediów</option>
-        <option value="Zarządanie">Zarządanie</option>
-    </select>
-    <input type="submit" value="Dodaj" />
-</form>
 
 

@@ -9,26 +9,39 @@ namespace APBD_CORE_APP2.Controllers
 {
     public class StudentsController : Controller
     {
-        public IActionResult Index()
+        private readonly s16540Context _context;
+        
+        public StudentsController(s16540Context context)
         {
-            var students = new List<Student>
-            {
-                new Student { FirstName = "Jan", LastName="Kowalski",StudyName="Informatyka"},
-                new Student { FirstName = "Jan", LastName="Pat 2",StudyName="Teologia"},
-                new Student { FirstName = "Jakub", LastName="Dzieciątko",StudyName="Hentai"},
-                new Student { FirstName = "Paweł", LastName="Kalbarczyk",StudyName="Informatyka"},
-                new Student { FirstName = "Przemek", LastName="Gołębski",StudyName="Informatyka"},
-                new Student { FirstName = "Adam", LastName="Nowak",StudyName="Sztuka nowych mediów"}
-            };
-            students.OrderBy(s => s.LastName);
+            _context = context;
+        }
+
+        public async Task <IActionResult> Index()
+        {
+           
+          
+            var students = _context.Student.ToList();
+            //var students = new List<Student>
+            //{
+            //    new Student { FirstName = "Jan", LastName="Kowalski",StudyName="Informatyka"},
+            //    new Student { FirstName = "Jan", LastName="Pat 2",StudyName="Teologia"},
+            //    new Student { FirstName = "Jakub", LastName="Dzieciątko",StudyName="Hentai"},
+            //    new Student { FirstName = "Paweł", LastName="Kalbarczyk",StudyName="Informatyka"},
+            //    new Student { FirstName = "Przemek", LastName="Gołębski",StudyName="Informatyka"},
+            //    new Student { FirstName = "Adam", LastName="Nowak",StudyName="Sztuka nowych mediów"}
+            //};
+            //students.OrderBy(s => s.LastName);
             return View(students);
         }
-        public IActionResult Create(Student student)
+        public IActionResult Create()
         {
+            if (!ModelState.IsValid)
+            {
 
+            }
             return View();
         }
-        public IActionResult Delete(Student student)
+        public IActionResult Delete()
         {
 
             return View();
