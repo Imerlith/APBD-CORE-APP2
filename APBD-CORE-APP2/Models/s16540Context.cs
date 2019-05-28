@@ -14,9 +14,6 @@ namespace APBD_CORE_APP2.Models
             : base(options)
         {
         }
-        public s16540Context(DbContextOptions options) : base(options)
-        {
-        }
 
         public virtual DbSet<Clients> Clients { get; set; }
         public virtual DbSet<Components> Components { get; set; }
