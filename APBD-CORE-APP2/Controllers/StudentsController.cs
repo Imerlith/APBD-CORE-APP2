@@ -18,20 +18,16 @@ namespace APBD_CORE_APP2.Controllers
 
         public async Task <IActionResult> Index()
         {
+
+
+            var students =
+                from student in _context.Student
+                join studies in _context.Studies on student.IdStudies equals studies.IdStudies
+                select new Student{FirstName= student.FirstName,LastName= student.LastName, Studies = new Studies { Name = studies.Name } };
+            
+            
            
-          
-            var students = _context.Student.ToList();
-            //var students = new List<Student>
-            //{
-            //    new Student { FirstName = "Jan", LastName="Kowalski",StudyName="Informatyka"},
-            //    new Student { FirstName = "Jan", LastName="Pat 2",StudyName="Teologia"},
-            //    new Student { FirstName = "Jakub", LastName="Dzieciątko",StudyName="Hentai"},
-            //    new Student { FirstName = "Paweł", LastName="Kalbarczyk",StudyName="Informatyka"},
-            //    new Student { FirstName = "Przemek", LastName="Gołębski",StudyName="Informatyka"},
-            //    new Student { FirstName = "Adam", LastName="Nowak",StudyName="Sztuka nowych mediów"}
-            //};
-            //students.OrderBy(s => s.LastName);
-            return View(students);
+            return View(students.ToList());
         }
         public IActionResult Create()
         {

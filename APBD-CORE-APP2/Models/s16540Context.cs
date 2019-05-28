@@ -6,14 +6,15 @@ namespace APBD_CORE_APP2.Models
 {
     public partial class s16540Context : DbContext
     {
-        public s16540Context()
-        {
-        }
+        //public s16540Context()
+        //{
+        //}
 
         public s16540Context(DbContextOptions<s16540Context> options)
             : base(options)
         {
         }
+        
 
         public virtual DbSet<Clients> Clients { get; set; }
         public virtual DbSet<Components> Components { get; set; }
