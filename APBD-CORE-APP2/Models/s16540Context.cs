@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -491,6 +492,10 @@ namespace APBD_CORE_APP2.Models
             modelBuilder.Entity<Student>(entity =>
             {
                 entity.HasKey(e => e.IdStudent);
+
+                entity.Property(e => e.IdStudent);
+
+                
 
                 entity.ToTable("Student", "apbd");
 
